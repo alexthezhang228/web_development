@@ -1,0 +1,38 @@
+<!--
+ * @Author: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @Date: 2023-03-05 16:00:32
+ * @LastEditors: alexthezhang228 110424337+alexthezhang228@users.noreply.github.com
+ * @LastEditTime: 2023-03-11 16:24:58
+ * @FilePath: /todolist/views/list.ejs
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do list</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- <%- include('header') -%> -->
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
+  <div class="box">
+    <% for (let i=0;i<items.length;i++){%>
+      <div class="item">
+        <input type="checkbox">
+        <p><%= items[i] %></p>
+      </div>
+    <% } %>
+    <form method="post" action="/">
+      <input type="text" name="newItem" placeholder="what is your plan?" autocomplete="off">
+      <button type="submit" name="list" value=<%= listTitle %>>Let's Go</button>
+    </form>
+  
+  </div>
+  <!-- <%- include('footer') -%> -->
+</body>
+</html>
